@@ -1,0 +1,21 @@
+.ERBNavItem {
+	display: inline-block;
+	font-size: 1.2em;
+	padding-left: 2%;
+}
+
+#myInput {
+	margin-left: 15%;
+	max-width: 70%;
+	margin-bottom: 15px;
+}
+table#table tr:nth-child(even) {
+  background-color: #eee;
+}
+table#table tr:nth-child(odd) {
+  background-color: #fff;
+}
+table#table th {
+  color: white;
+  background-color: black;
+}
