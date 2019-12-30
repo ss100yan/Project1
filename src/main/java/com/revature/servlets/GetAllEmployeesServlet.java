@@ -40,7 +40,8 @@ public class GetAllEmployeesServlet extends HttpServlet {
 		String position = request.getParameter("position");
 		String username = request.getParameter("username");
 		String action = request.getParameter("action");
-
+		String manager_belongs_to = request.getParameter("manager_belongs_to");
+		
 		ObjectMapper om = new ObjectMapper();
 		PrintWriter pw = response.getWriter();
 

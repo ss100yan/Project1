@@ -10,7 +10,7 @@ public interface ReimbursementsDao {
 	int approveReimbursementByErbId(int id);
 	int denyReimbursementByErbId(int id);
 	
-	byte[] getReceipts(int ID);
+	byte[] getReceipts(int id);
 	
 	Reimbursements getReimbursementById(int id);
 	

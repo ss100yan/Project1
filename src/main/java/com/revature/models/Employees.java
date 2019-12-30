@@ -10,13 +10,14 @@ public class Employees {
 
 
 	private int isManager; // possibly change to boolean???
+	private String manager_belongs_to;
 
 	public Employees() {
 		super();
 	}
 
 	public Employees(int id, String name, int managerId, String position, String username, String password,
-			int isManager) {
+			int isManager, String manager_belongs_to ) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -25,12 +26,13 @@ public class Employees {
 		this.username = username;
 		this.password = password;
 		this.isManager = isManager;
+		this.manager_belongs_to = manager_belongs_to;
 	}
 
 	@Override
 	public String toString() {
 		return "Employees [id=" + id + ", name=" + name + ", managerId=" + managerId + ", position=" + position
-				+ ", username=" + username + ", password=" + password + ", isManager=" + isManager + "]";
+				+ ", username=" + username + ", password=" + password + ", isManager=" + isManager + ",manager_belongs_to =" + manager_belongs_to + "]";
 	}
 
 	@Override
@@ -140,6 +142,17 @@ public class Employees {
 	public void setIsManager(int isManager) {
 		this.isManager = isManager;
 	}
+
+	public void setmanager_belongs_to(String manager_belongs_to) {
+		// TODO Auto-generated method stub
+		this.manager_belongs_to = manager_belongs_to;
+	}
+
+	public void setManager_belongs_to(String manager_belongs_to2) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 }

@@ -2,17 +2,14 @@
 <html>
 
 <head>
-	<title> Manager | View All Employees </title>
-	<link rel="stylesheet" href="Scripts/managerHome.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	 crossorigin="anonymous">
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	 crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-	 crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	 crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="Styles/managerHome.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  >
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	 
 
 
 </head>
@@ -20,24 +17,32 @@
 <body>
 	<section id="mgmtNav">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#" id="username">username</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
 			 aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="managerhome">ERB Management</a>
+				<li class="nav-item">
+						<a class="nav-link active" href="managerhome">Home</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="allemployees">View Employees</a>
+				<li class="nav-item">
+						<a class="nav-link" href="Mcreate">Reimbursement </a>
 					</li>
+				
 					<li class="nav-item">
-						<a class="nav-link" href="logout">Logout</a>
+						<a class="nav-link" href="allemployees">Employees</a>
 					</li>
-
-				</ul>
+					
+						<li class="nav-item">
+						<a class="nav-link" href="allApproved">All Approved Requests</a>
+					</li>
+							</ul>
+				
+        <button type="button" onclick="window.location.href = 'logout';"   class="btn btn-default btn-sm" id ="logout">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      
 			</div>
 		</nav>
 	</section>

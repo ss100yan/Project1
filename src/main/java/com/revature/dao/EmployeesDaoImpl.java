@@ -95,6 +95,9 @@ public class EmployeesDaoImpl implements EmployeesDao {
 				
 				int isManager = rs.getInt("IS_MANAGER");
 				e.setIsManager(isManager);
+				
+				String manager_belongs_to = rs.getString("MANAGER_BELONGS_TO");
+				e.setmanager_belongs_to(manager_belongs_to);
 
 				employeesList.add(e);
 
@@ -174,14 +177,15 @@ public class EmployeesDaoImpl implements EmployeesDao {
 	}
 
 	@Override
-	public int updateEmployeeById(int id) {
+	public int updateEmployeeById(int id, String name) {
 		int updatedEmployee = 0;
 		String sql = "UPDATE EMPLOYEES SET EMP_NAME = ? WHERE EMP_ID = ?";
 		
 		try (Connection con = ConnectionUtil.getConnection();
 				PreparedStatement ps = con.prepareStatement(sql)) {
+			ps.setString(1, name);
+			ps.setInt(2, id);
 			
-			ps.setInt(1, id);
 			updatedEmployee = ps.executeUpdate();
 		} catch (SQLException|IOException e) {
 			e.printStackTrace();

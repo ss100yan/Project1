@@ -10,7 +10,7 @@ public class LogoutAccountManager {
 		HttpSession session = request.getSession(false);
 		
 		if (session != null) {
-			// invalidates the session and unbinds any user session info
+			
 			session.invalidate();
 		}
 	}

@@ -3,7 +3,7 @@
 
 <head>
 
-<link rel="stylesheet" href="Styles/managerHome.css">
+	<link rel="stylesheet" href="Styles/managerHome.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  >
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -33,8 +33,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="allemployees">Employees</a>
 					</li>
-					
-					<li class="nav-item">
+						<li class="nav-item">
 						<a class="nav-link" href="allApproved">All Approved Requests</a>
 					</li>
 							</ul>
@@ -46,37 +45,53 @@
 			</div>
 		</nav>
 	</section>
-  <br>
-  <br>
-  <section id="createReqSection">
-    <div class="container text-center">
-      <h2>New request</h2>
-    </div>
-    <br>
-    <div class="container text-left">
-      <form action="Mcreate" method="POST" enctype='multipart/form-data'>
-                  <input type="text" id="formGroupExampleInput2" placeholder="Amount" name="reimbursementAmount">
-            <br>
-            
-               <br>
-             
-                <div>
-                <input type="hidden" id="empName"  name="managerId"  >
-                </div>
-                 <br>
-              <div>
-               <input  type="hidden"   id="empId" placeholder="Employee ID" name="employeeId" >
-                </div>
-        <br>
-	Receipt: <br />
-			<input type="file" name="pic" accept="image/*"> <br /> <input
-				type="submit" id="picture" value="Submit" />
-      </form>
-    </div>
+	<br>
+	<div class="row">
+	
+<div class="col-3">
 
-  </section>
-  <script type="text/javascript" src="Scripts/EmployeeRequests.js"></script>
-    <script type="text/javascript" src="Scripts/editProfile.js"></script>
+	<section id="approveOrDenySection">
+	
+		<div class="container text-left">
+		
+					   
+				<br>
+			</form>
+			<form name="seerequestsfrom" method="POST" 
+			 action="javascript:getReceiptWithID(document.getElementById('requestid').value)">
+			<div class="form-group">
+			    <p> Get Photo of Receipt</p>
+			<input type="text" name="Request Id" id ="requestid" placeholder="Reimbursement ID ">
+					<input type="submit" id ="getrequests" name="Get Photo" value="submit">
+				</div>
+			</form> 
+		             <br>
+		          <div id="box" ></div>
+		</div>
+
+	</section>
+
+
+</div>
+<div class=col-1></div>
+	<div class=col-6>
+	<div class="container text-center">
+			<table id="table" class="table">
+			<tr id="headerRow">
+				<th>Reimbursement ID</th>
+				<th>Employee ID</th>
+				<th>Employee Name </th>
+				<th>Amount Requested</th>
+				<th>Status</th>
+			</tr>
+		</table>
+	</div>
+	
+	</div>
+<div class=col-1></div>
+</div>
+	<script type="text/javascript" src="Scripts/allApproved.js"></script>
+	
 </body>
 
 </html>

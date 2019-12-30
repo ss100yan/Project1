@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.revature.models.Reimbursements;
+
 import com.revature.dao.ReimbursementsDaoImpl;
 import com.revature.dao.ReimbursementsDao;
 //import com.project1.repository.Actions;
@@ -40,13 +41,18 @@ public class GetPhoto extends HttpServlet {
 		 */
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			int id = Integer.parseInt(request.getParameter("intid"));
+			ReimbursementsDao emp = new ReimbursementsDaoImpl();
+		
+			System.out.println(id);
 			
-			Reimbursements action = new Reimbursements();
+			byte[] picture = emp.getReceipts(id);
 			
-			byte[] picture = action.getReceipts(id);
 			PrintWriter writer = response.getWriter();
+			
 			response.setContentType("application/json");
+			
 			ObjectMapper imTheMap = new ObjectMapper();
+			
 			writer.write(imTheMap.writeValueAsString(picture));
 		}
 		/**

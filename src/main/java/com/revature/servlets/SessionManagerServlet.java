@@ -38,12 +38,14 @@ public class SessionManagerServlet extends HttpServlet {
 			int id = (Integer) session.getAttribute("id");
 			String name = (String) session.getAttribute("name");
 			String position = (String) session.getAttribute("position");
+			int manager_id = (Integer) session.getAttribute("manager_id");
 			String json = "{\"username\": \"" + username;
 //			json += "\", \"" + "isManager\": " + isManager + "}"; //original
 			json += "\", \"" + "isManager\": \"" + isManager;
 			json += "\", \"" + "id\": \"" + id;
-			json += "\", \"" + "name\": \"" + name;
-			json += "\", \"" + "position\": \"" + position + "\"}";
+			json += "\", \"" + "name\": \"" + manager_id;
+			json += "\", \"" + "position\": \"" + position;
+			json += "\", \"" + "manager_id\": \"" + name + "\"}";
 			pw.write(json);
 		} else {
 			pw.write("N/A");

@@ -13,7 +13,7 @@ function getReceiptWithID(a){
 			body.append(img);
 		}
 	}
-	xhr.open('POST', '../GetReceiptWithID?intid='+a, true);
+	xhr.open('POST', './GetReceiptWithID?intid='+a, true);
 	xhr.send(null);
 }
 
@@ -32,6 +32,20 @@ function sendAjaxGet(url, callback) {
 	xhr.send();
 }
 
+var emp;
+
+
+
+
+function populateUser(xhr) {
+	let response = JSON.parse(xhr.responseText);
+	console.log(response);
+	
+
+      emp = response.id;
+      
+      console.log(emp)
+}
 
 
 
@@ -41,6 +55,9 @@ function display(xhr) {
 	console.log(reimbursements);
 	reimbursementsArr = reimbursements.reimbursements;
 	console.log(reimbursementsArr);
+	
+
+    var Approved = "APPROVED";
 
 	let table = document.getElementById("table");
 
@@ -58,10 +75,16 @@ function display(xhr) {
 		} else {
 			employeeId = "NULL";
 		}
+		
+		if (reimbursementsArr[i].managerId) {
+			managerId = `${reimbursementsArr[i].managerId}`;
+		} else {
+			managerId = "NULL";
+		}
 
 
 		if (reimbursementsArr[i].name) {
-			name = `${reimbursementsArr[i].employees.name}`;
+			name = `${reimbursementsArr[i].employees.name}`; 
 		} else {
 			name = "NULL";
 		}
@@ -77,34 +100,24 @@ function display(xhr) {
 		} else {
 			id = "NULL";
 		}
-
-
+              
+         if(id == "APPROVED" ){
 		newRow.innerHTML =
 			`<td>${reimbursementsArr[i].reimbursementId}</td>
 	 	<td>${reimbursementsArr[i].employeeId}</td>
 	 	<td>${reimbursementsArr[i].employees.name}</td>
 	 	<td>${reimbursementsArr[i].reimbursementAmount}</td>
 	 	<td>${reimbursementsArr[i].reimbursementStatus}</td>
+	 
 	 	`;
-
+         }
 		table.appendChild(newRow);
 	}
 }
 
 
-function populateUser(xhr) {
-	let response = JSON.parse(xhr.responseText);
-	console.log(response);
 
-	if (response == null) {
-		window.location = "http://localhost:8090/P1/index";
-	} else if (response.username == null) {
-		window.location = "http://localhost:8090/P1/index";
-	} else {
-		let username = document.getElementById("username");
-		username.innerHTML = response.username;
-	}
-}
+
 
 sendAjaxGet("http://localhost:8090/P1/reimbursements", display);
 

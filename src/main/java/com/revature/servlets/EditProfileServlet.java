@@ -45,7 +45,7 @@ public class EditProfileServlet extends HttpServlet {
 		e.setName(empName);
 		
 		EmployeesDao ed = new EmployeesDaoImpl();
-		int updatedEmployee = ed.updateEmployeeById(empId);
+		int updatedEmployee = ed.updateEmployeeById(empId,empName);
 		System.out.println(updatedEmployee);
 //		
 		if (updatedEmployee == 1) {

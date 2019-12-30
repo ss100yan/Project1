@@ -2,36 +2,37 @@
 <html>
 
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Employees | Edit Profile</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"  >
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    	<link rel="stylesheet" href="Styles/employeeHome.css" />
 </head>
 
 <body>
     <section id="empEditNav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#" id="username">username</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="create">Create Request</a>
+                        <a class="nav-link" href="create">Reimbursements</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="employeehome">ERB Requests</a>
+                        <a class="nav-link" href="employeehome">Requests</a>
                     </li>
                     <li class="navbar-item">
-                        <a class="nav-link active" href="profile"> Edit Profile</a>
+                        <a class="nav-link active" href="profile">Edit Profile</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout">Logout</a>
-                    </li>
+                   
                 </ul>
+                	 <button type="button" onclick="window.location.href = 'logout';"   class="btn btn-default btn-sm" id ="logout">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
             </div>
         </nav>
     </section>
@@ -45,12 +46,12 @@
         <div class="container text-left">
             <form action="profile" method="POST">
                 <div >
-                    <label >Employee ID</label>
+                    
                     <br>
-                    <input type="number"  id="empId" name="id">
+                    <input type="hidden" type="number"  id="empId" name="id">
                 </div>
                 <div class="form-group">
-                    <label >Employee Name</label>
+                    <label >Update Employee Name</label>
                       <br>
                     <input type="text"  id="empName" placeholder="" name="name">
                 </div>
@@ -59,9 +60,9 @@
                     <input type="hidden" id="empJobTitle" placeholder="" name="position" disabled>
                 </div>
                 <div class="form-group">
-                    <label >Username</label>
+                   
                       <br>
-                    <input type="text"  id="empUsername" placeholder="" name="username">
+                    <input type="hidden" type="text"  id="empUsername" placeholder="" name="username">
                 </div>
              
                 <input type="submit" value="Save" >

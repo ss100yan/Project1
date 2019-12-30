@@ -45,7 +45,7 @@ public class EmployeeCreateRequestServlet extends HttpServlet {
 		int reimbursementId = (int)(Math.random()*1000);
 				//Integer.parseInt(request.getParameter("reimbursementId"));
 		float reimbursementAmount = Float.parseFloat(request.getParameter("reimbursementAmount"));
-		int managerId = 2;
+		int managerId = Integer.parseInt(request.getParameter("managerId"));;
 			//	Integer.parseInt(request.getParameter("managerId"));
 		int employeeId = Integer.parseInt(request.getParameter("employeeId"));
 		

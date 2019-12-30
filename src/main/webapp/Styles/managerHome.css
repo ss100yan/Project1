@@ -19,3 +19,26 @@ table#table th {
   color: white;
   background-color: black;
 }
+
+#logout{
+	float: right;
+}
+
+#home{
+	float: left;
+}
+
+#ul{
+width:750px;
+margin:0 auto;
+list-style:none;
+}
+#ul li {
+float:left;
+}
+#nul a {
+display:block;
+text-align:center;
+width:150px; /* fixed width */
+text-decoration:none; 
+}

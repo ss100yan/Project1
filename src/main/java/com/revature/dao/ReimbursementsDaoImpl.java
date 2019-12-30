@@ -290,7 +290,7 @@ public class ReimbursementsDaoImpl implements ReimbursementsDao {
 		List<Reimbursements> reimbursementsList = new ArrayList<Reimbursements>();
 
 		String sql = "SELECT * FROM REIMBURSEMENTS";
-
+System.out.println( "im running");
 		ResultSet rs = null;
 
 		try (Connection con = ConnectionUtil.getConnection();
@@ -388,7 +388,7 @@ public class ReimbursementsDaoImpl implements ReimbursementsDao {
 	}
 	
 	@Override
-	public byte[] getReceipts(int ID) {
+	public byte[] getReceipts(int id) {
 		byte[] receipt = null;
 		ResultSet rs = null;
 		String sql = "SELECT PHOTO FROM REIMBURSEMENTS WHERE Reimbursement_ID = ?";
@@ -396,7 +396,7 @@ public class ReimbursementsDaoImpl implements ReimbursementsDao {
 		try (Connection con = ConnectionUtil.getConnection();
 				PreparedStatement ps = con.prepareStatement(sql);) {
 
-			ps.setInt(1, ID);
+			ps.setInt(1, id);
 			rs = ps.executeQuery();
 
 			while (rs.next()) {

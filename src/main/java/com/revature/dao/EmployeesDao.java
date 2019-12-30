@@ -10,7 +10,8 @@ public interface EmployeesDao {
 	Employees getEmployeesById(int id);
 	Employees getEmployeesByName(String name);
 	List<Employees> getAllEmployees();
-	int updateEmployeeById(int id);
+	
 	int updateEmployeeByName(String name);
+	int updateEmployeeById(int id, String name);
 	
 }

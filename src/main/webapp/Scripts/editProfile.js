@@ -16,29 +16,19 @@ function display(xhr) {
 	console.log(employee);
 	employeeArr = employee.employee;
 	console.log(employeeArr);
-            var ID =`${employee.id}`;
+           
 	document.getElementById('empId').value = `${employee.id}`;
-	document.getElementById('empName').placeholder = `${employee.name}`;
+	document.getElementById('empName').value = `${employee.name}`;
 	document.getElementById('empJobTitle').placeholder = `${employee.position}`;
 	document.getElementById('empUsername').placeholder = `${employee.username}`;
+	document.getElementById('manager_Id').value =`${employee.manager_id}`;
 
+	var mid= employee.manager_id;
+	console.log("test");
+	console.log(mid);
 }
 
 
 sendAjaxGet("http://localhost:8090/P1/session", display);
-
-function populateUser(xhr) {
-	let response = JSON.parse(xhr.responseText);
-	console.log(response);
-
-	if (response == null) {
-		window.location = "http://localhost:8090/P1/index";
-	} else if (response.username == null) {
-		window.location = "http://localhost:8090/P1/index";
-	} else {
-		let username = document.getElementById("username");
-		username.innerHTML = response.username;
-	}
-}
 
 sendAjaxGet("http://localhost:8090/P1/session", populateUser)

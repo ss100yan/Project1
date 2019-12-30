@@ -12,4 +12,10 @@ table#table tr:nth-child(odd) {
 table#table th {
   color: white;
   background-color: black;
+}#home{
+	float: left;
+}
+
+#logout{
+	float: right;
 }

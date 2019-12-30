@@ -177,6 +177,26 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>GetPhoto</servlet-name>
+    <url-pattern>/GetPhoto</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetReceiptWithID</display-name>
+    <servlet-name>GetReceiptWithID</servlet-name>
+    <servlet-class>com.revature.servlets.GetReceiptWithID</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetReceiptWithID</servlet-name>
     <url-pattern>/GetReceiptWithID</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>allApproved</display-name>
+    <servlet-name>allApproved</servlet-name>
+    <servlet-class>com.revature.servlets.allApproved</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>allApproved</servlet-name>
+    <url-pattern>/allApproved</url-pattern>
   </servlet-mapping>
 </web-app>
